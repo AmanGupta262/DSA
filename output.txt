@@ -1,0 +1,4 @@
+Selection sort: 
+[-1, 0, 1, 3, 4]
+Bubble sort: 
+[-1, 0, 4, 9, 10]
