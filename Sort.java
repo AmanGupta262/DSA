@@ -47,6 +47,16 @@ public class Sort {
         }
     }
 
+    static void insertionSort(int[] arr, int n) {
+        for (int i = 1; i < n - 1; i++) {
+            for (int j = i; j > 0; j--) {
+                if (arr[j - 1] > arr[j]) {
+                    swapElement(arr, j - 1, j);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr = { 3, 4, 1, 0, -1 };
 
@@ -59,5 +69,11 @@ public class Sort {
         bubbleSort(arr1, 5);
         System.out.println("Bubble sort: ");
         System.out.println(Arrays.toString(arr1));
+
+        int[] arr2 = { 12, 8, 13, 9, 5 };
+        insertionSort(arr2, 5);
+        System.out.println("Insertion sort: ");
+        System.out.println(Arrays.toString(arr2));
+
     }
 }
