@@ -57,6 +57,38 @@ public class Sort {
         }
     }
 
+    static int[] mergeTwoSortedArray(int[] arr1, int[] arr2) {
+        int i = 0;
+        int j = 0;
+        int m = arr1.length;
+        int n = arr2.length;
+        int[] mergedArray = new int[m + n];
+
+        int k = 0;
+        while (i < m && j < n) {
+            if (arr1[i] < arr2[j]) {
+                mergedArray[k] = arr1[i];
+                i++;
+            } else {
+                mergedArray[k] = arr2[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < m) {
+            mergedArray[k++] = arr1[i];
+            i++;
+        }
+
+        while (j < n) {
+            mergedArray[k++] = arr2[j];
+            j++;
+        }
+
+        return mergedArray;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 3, 4, 1, 0, -1 };
 
@@ -70,10 +102,12 @@ public class Sort {
         System.out.println("Bubble sort: ");
         System.out.println(Arrays.toString(arr1));
 
-        int[] arr2 = { 12, 8, 13, 9, 5 };
-        insertionSort(arr2, 5);
+        int[] arr2 = { 12, 8, 13, 9, 5, 2, 20 };
+        insertionSort(arr2, 7);
         System.out.println("Insertion sort: ");
         System.out.println(Arrays.toString(arr2));
 
+        System.out.println("Merger two sorted array: ");
+        System.out.println(Arrays.toString(mergeTwoSortedArray(arr1, arr2)));
     }
 }
