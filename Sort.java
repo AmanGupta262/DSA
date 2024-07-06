@@ -89,6 +89,19 @@ public class Sort {
         return mergedArray;
     }
 
+    static int[] mergeSort(int[] arr) {
+        if (arr.length <= 1) {
+            return arr;
+        }
+
+        int middle = arr.length / 2;
+
+        int[] leftSorted = mergeSort(Arrays.copyOfRange(arr, 0, middle));
+        int[] rightSorted = mergeSort(Arrays.copyOfRange(arr, middle, arr.length));
+
+        return mergeTwoSortedArray(leftSorted, rightSorted);
+    }
+
     public static void main(String[] args) {
         int[] arr = { 3, 4, 1, 0, -1 };
 
@@ -109,5 +122,9 @@ public class Sort {
 
         System.out.println("Merger two sorted array: ");
         System.out.println(Arrays.toString(mergeTwoSortedArray(arr1, arr2)));
+
+        int[] arr3 = { 5, 4, 3, 2, 1 };
+        System.out.println("Merge Sort");
+        System.out.println(Arrays.toString(mergeSort(arr3)));
     }
 }
