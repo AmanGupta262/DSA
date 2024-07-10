@@ -48,13 +48,33 @@ public class ArraysEasy {
                         + (secondMin == Integer.MAX_VALUE ? -1 : secondMin));
     }
 
+    // Array is sorted in ascending order
+    static boolean checkArrayIsSortedAndRotated(int[] arr) {
+        int count = 0;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i - 1] > arr[i]) {
+                count++;
+            }
+        }
+
+        if (arr[arr.length - 1] > arr[0]) {
+            count++;
+        }
+
+        return count <= 1;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 4, 7, 7, 5 };
         int[] arr1 = { 28078, 19451, 935, 28892, 2242, 3570, 5480, 231 };
 
         System.out.println("Largest element: " + largestElement(arr));
 
-        // secondLargestSmallestElement(arr);
+        secondLargestSmallestElement(arr);
         secondLargestSmallestElement(arr1);
+
+        int[] arr2 = { 4, 1, 2, 3 };
+        System.out.println("Is array sorted and rotated: " + checkArrayIsSortedAndRotated(arr2));
     }
 }
