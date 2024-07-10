@@ -8,3 +8,5 @@ Merger two sorted array:
 [-1, 0, 2, 4, 5, 8, 9, 9, 10, 12, 13, 20]
 Merge Sort
 [1, 2, 3, 4, 5]
+Quick Sort
+[1, 2, 3, 4, 5]
