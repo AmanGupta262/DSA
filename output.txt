@@ -10,3 +10,5 @@ Merge Sort
 [1, 2, 3, 4, 5]
 Quick Sort
 [1, 2, 3, 4, 5]
+Recursive bubble sort
+[2, 6, 9, 10, 12]

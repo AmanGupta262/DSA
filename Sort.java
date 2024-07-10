@@ -147,6 +147,20 @@ public class Sort {
         return arr;
     }
 
+    static void recursiveBubbleSort(int[] arr, int n) {
+        if (n <= 1) {
+            return;
+        }
+
+        for (int i = 1; i < n; i++) {
+            if (arr[i - 1] > arr[i]) {
+                swapElement(arr, i - 1, i);
+            }
+        }
+
+        recursiveBubbleSort(arr, n - 1);
+    }
+
     public static void main(String[] args) {
         int[] arr = { 3, 4, 1, 0, -1 };
 
@@ -176,5 +190,10 @@ public class Sort {
         System.out.println("Quick Sort");
         quickSort(arr4);
         System.out.println(arr4);
+
+        int[] arr5 = { 9, 2, 10, 12, 6 };
+        System.out.println("Recursive bubble sort");
+        recursiveBubbleSort(arr5, arr5.length);
+        System.out.println(Arrays.toString(arr5));
     }
 }
