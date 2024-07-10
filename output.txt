@@ -1,1 +1,2 @@
-Largest element: 5
+Largest element: 7
+Second largest 19451 Second smallest 935
