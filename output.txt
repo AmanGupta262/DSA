@@ -1,14 +1,1 @@
-Selection sort: 
-[-1, 0, 1, 3, 4]
-Bubble sort: 
-[-1, 0, 4, 9, 10]
-Insertion sort: 
-[2, 5, 8, 9, 12, 13, 20]
-Merger two sorted array: 
-[-1, 0, 2, 4, 5, 8, 9, 9, 10, 12, 13, 20]
-Merge Sort
-[1, 2, 3, 4, 5]
-Quick Sort
-[1, 2, 3, 4, 5]
-Recursive bubble sort
-[2, 6, 9, 10, 12]
+Largest element: 5
