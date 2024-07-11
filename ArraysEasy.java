@@ -86,6 +86,30 @@ public class ArraysEasy {
 
     }
 
+    static void reverseAnArray(int[] arr, int i, int j) {
+        while (i < j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+    static void rotateArray(int[] arr, int k) {
+        int n = arr.length - 1;
+        int actualRotation = k % arr.length;
+
+        // reverse n - k elements
+        reverseAnArray(arr, 0, n - actualRotation);
+
+        // reverse last k elements
+        reverseAnArray(arr, n - actualRotation + 1, n);
+
+        // reverse whole array
+        reverseAnArray(arr, 0, n);
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 4, 7, 7, 5 };
         int[] arr1 = { 28078, 19451, 935, 28892, 2242, 3570, 5480, 231 };
@@ -101,5 +125,9 @@ public class ArraysEasy {
         int[] arr3 = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
         removeDuplicates(arr3);
         System.out.println(Arrays.toString(arr3));
+
+        int[] arr4 = { 1, 2, 3, 4, 5, 6, 7 };
+        rotateArray(arr4, 3);
+        System.out.println(Arrays.toString(arr4));
     }
 }
