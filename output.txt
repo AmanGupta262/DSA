@@ -2,3 +2,4 @@ Largest element: 7
 Second largest 5 Second smallest 4
 Second largest 19451 Second smallest 935
 Is array sorted and rotated: true
+[0, 1, 2, 3, 4, 2, 2, 3, 3, 4]
