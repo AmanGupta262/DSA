@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArraysEasy {
@@ -122,6 +123,53 @@ public class ArraysEasy {
             }
 
         }
+    }
+
+    static ArrayList<Integer> unionOfTwoSortedArrays(int[] arr1, int[] arr2, int m, int n) {
+        ArrayList<Integer> union = new ArrayList<>();
+
+        int i = 0;
+        int j = 0;
+        int lastElement = Integer.MAX_VALUE;
+
+        while (i < m && j < n) {
+
+            if (union.size() > 0) {
+                lastElement = union.get(union.size() - 1);
+            }
+            if (arr1[i] < arr2[j]) {
+                if (lastElement == arr1[i]) {
+                    i++;
+                    continue;
+                }
+                lastElement = arr1[i];
+                union.add(arr1[i]);
+            } else {
+                if (lastElement == arr2[j]) {
+                    j++;
+                    continue;
+                }
+                lastElement = arr2[j];
+                union.add(arr2[j]);
+            }
+        }
+
+        while (i < m) {
+            if (lastElement == arr1[i]) {
+                i++;
+                continue;
+            }
+            union.add(arr1[i++]);
+        }
+
+        while (j < n) {
+            if (lastElement == arr2[j]) {
+                j++;
+                continue;
+            }
+            union.add(arr2[j++]);
+        }
+        return union;
     }
 
     public static void main(String[] args) {
