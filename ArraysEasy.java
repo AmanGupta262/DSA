@@ -209,6 +209,34 @@ public class ArraysEasy {
         return num;
     }
 
+    static ArrayList<Integer> intersectionOfTwoSortedArrays(int[] arr1, int[] arr2) {
+        int m = arr1.length;
+        int n = arr2.length;
+
+        int i = 0;
+        int j = 0;
+
+        ArrayList<Integer> intersection = new ArrayList<>();
+
+        while (i < m && j < n) {
+            if (arr1[i] == arr2[j]) {
+                intersection.add(arr1[i]);
+                i++;
+                j++;
+            }
+
+            if (arr1[i] < arr2[j]) {
+                i++;
+            }
+
+            if (arr1[i] > arr2[j]) {
+                j++;
+            }
+        }
+
+        return intersection;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 4, 7, 7, 5 };
         int[] arr1 = { 28078, 19451, 935, 28892, 2242, 3570, 5480, 231 };
