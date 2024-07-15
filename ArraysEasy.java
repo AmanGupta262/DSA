@@ -110,6 +110,20 @@ public class ArraysEasy {
         reverseAnArray(arr, 0, n);
     }
 
+    static void moveZerosToEnd(int[] arr) {
+        int i = 0;
+
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] != 0) {
+                arr[i] = arr[j];
+                if (i != j)
+                    arr[j] = 0;
+                i++;
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 4, 7, 7, 5 };
         int[] arr1 = { 28078, 19451, 935, 28892, 2242, 3570, 5480, 231 };
@@ -129,5 +143,9 @@ public class ArraysEasy {
         int[] arr4 = { 1, 2, 3, 4, 5, 6, 7 };
         rotateArray(arr4, 3);
         System.out.println(Arrays.toString(arr4));
+
+        int[] arr5 = { 1, 1, 1, 3, 12 };
+        moveZerosToEnd(arr5);
+        System.out.println(Arrays.toString(arr5));
     }
 }
