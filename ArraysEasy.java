@@ -172,6 +172,18 @@ public class ArraysEasy {
         return union;
     }
 
+    static int missingNumber(int[] arr) {
+        int n = arr.length;
+
+        int totalSum = n * (n + 1) / 2;
+
+        for (int i = 0; i < n; i++) {
+            totalSum -= arr[i];
+        }
+
+        return totalSum;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 4, 7, 7, 5 };
         int[] arr1 = { 28078, 19451, 935, 28892, 2242, 3570, 5480, 231 };
