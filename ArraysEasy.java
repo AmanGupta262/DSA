@@ -184,6 +184,22 @@ public class ArraysEasy {
         return totalSum;
     }
 
+    static int findConsecutiveOnes(int[] arr) {
+        int sum = 0;
+        int count = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                count = Math.max(count, sum);
+                sum = 0;
+            } else {
+                sum += 1;
+            }
+        }
+
+        return count;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 4, 7, 7, 5 };
         int[] arr1 = { 28078, 19451, 935, 28892, 2242, 3570, 5480, 231 };
